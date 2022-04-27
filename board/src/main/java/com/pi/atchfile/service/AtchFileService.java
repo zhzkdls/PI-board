@@ -1,12 +1,19 @@
 package com.pi.atchfile.service;
 
 import com.pi.atchfile.model.AtchFile;
-
-import java.util.List;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface AtchFileService {
-    AtchFile addAtchFile(AtchFile atchFile);
-    List<AtchFile>getAllAtchFile();
-    AtchFile findAtchFileById(Long id);
-    void deleteAtchByid(Long id);
+
+    void upload(AtchFile atchFile, MultipartFile file) ;
+
+
+
+//    AttachVO findAtchFileById(Long id);
+//    void deleteAtchByid(Long id);
+//    List<AttachVO>getAllAtchFile();
+//    AttachVO addAtchFile(AttachVO atchFile);
+
 }
+
+

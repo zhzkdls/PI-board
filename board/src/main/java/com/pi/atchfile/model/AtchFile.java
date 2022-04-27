@@ -1,7 +1,7 @@
 package com.pi.atchfile.model;
 
 
-import com.pi.atchfile.util.BaseTime;
+import com.pi.board.util.BaseTime;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -16,9 +16,8 @@ public class AtchFile extends BaseTime {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private Long pstg_seq; //게시판 일련번호
     private Long atch_file_seq; // 첨부파일 일련번호
+    private Long pstg_seq; //게시판 일련번호
     @Column(columnDefinition = "VARCHAR(255)")
     private String or_file_name; //원본 파일명
     @Column(columnDefinition = "VARCHAR(255)")
@@ -31,10 +30,9 @@ public class AtchFile extends BaseTime {
     private String file_mdfcn_dt; // 파일 수정 일시
 
     @Builder
-    public AtchFile(Long id, Long pstg_seq, Long atch_file_seq, String or_file_name, String sv_file_name, String file_path, Long file_size, String file_mdfcn_dt) {
-        this.id = id;
-        this.pstg_seq = pstg_seq;
+    public AtchFile(Long atch_file_seq, Long pstg_seq, String or_file_name, String sv_file_name, String file_path, Long file_size, String file_mdfcn_dt) {
         this.atch_file_seq = atch_file_seq;
+        this.pstg_seq = pstg_seq;
         this.or_file_name = or_file_name;
         this.sv_file_name = sv_file_name;
         this.file_path = file_path;
